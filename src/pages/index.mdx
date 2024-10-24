@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/Layout.astro
-title: Academic Project Page Template
+title: "MSEffect: High-resolution, interpretable MS/MS spectrum prediction"
 description: Simple project page template for your research paper, built with Astro and Tailwind CSS
 favicon: favicon.svg
 thumbnail: screenshot.png
@@ -20,6 +20,10 @@ import LaTeX from "../components/LaTeX.astro";
 
 import outside from "../assets/outside.mp4";
 import transformer from "../assets/transformer.webp";
+import annotated_spectra from "../assets/annotated_spectra.png"
+import massive_unlabelled from "../assets/massive_unlabelled.png"
+import prediction from "../assets/prediction.png"
+
 import Splat from "../components/Splat.tsx"
 
 import CodeBlock from "../components/CodeBlock.astro";
@@ -29,27 +33,39 @@ export const components = {pre: CodeBlock}
   title={frontmatter.title}
   authors={[
     {
-      name: "Roman Hauksson",
-      url: "https://roman.technology",
-      institution: "Independent",
+      name: "Andreas Burger",
+      url: "https://www.andreas-burger.com/",
+      institution: "University of Toronto",
       notes: ["*", "†"],
     },
     {
-      name: "Author Two",
-      institution: "Institution Two",
+      name: "Adamo Young",
+      institution: "University of Toronto",
       notes: ["*", "†"],
     },
     {
-      name: "Author Three",
-      institution: "Institution Three",
+      name: "Fei Wang",
+      institution: "University of Alberta",
       notes: ["†"],
     },
     {
-      name: "Author Four",
-      institution: "Institution Four",
+      name: "Luke Zhang",
+      institution: "University of Toronto",
+    },
+    {
+      name: "Rory Gao",
+      institution: "University of Toronto",
+    },
+    {
+      name: "Filip Jozefov",
+      institution: "IOCB Prague",
+    },
+    {
+      name: "Roman Bushuiev",
+      institution: "IOCB Prague",
     },
   ]}
-  conference="Conference Name"
+  conference="Evolved Bio x ML Hackathon 2024"
   notes={[
     {
       symbol: "*",
@@ -79,38 +95,39 @@ export const components = {pre: CodeBlock}
   ]}
   />
 
-<Video source={outside} />
+<Figure>
+<Image source={prediction} altText="MSEffect prediction" />
+</Figure>
 
 <HighlightedSection>
 
 ## Abstract
 
-This is a live demo for a template you can use to create a simple project page for your research paper. See the code for the template and instructions on how to use it yourself [here](https://github.com/RomanHauksson/academic-project-astro-template). It's made with the [Astro web framework](https://astro.build/) and styled with [Tailwind CSS](https://tailwindcss.com/). You write the content in [MDX](https://mdxjs.com/), which enables markdown formatting like **bold**, _italics_, and ~strikethrough~, as well as custom components like <SmallCaps>small caps.</SmallCaps>
+To accelerate scientific discovery, we need to identify a large number of compounds with high precision. MS/MS could do that. 
+
+<div style="text-align: center; font-weight: bold;">
+  But here's the catch: Going from spectrum to molecule is hard, and training data is sparse! We don't know 90% of the molecule spectra.
+</div>
 
 </HighlightedSection>
 
-## Figures
+## Our Solution
 
 Use the figure component to display images, videos, equations, or any other element, with an optional caption.
 
-<Figure
-    caption="Diagram of the transformer deep learning architecture."
-  >
-    <Image source={transformer} altText="Diagram of the transformer deep learning architecture." />
-</Figure>
-
-## Two columns
-
-Use the two columns component to display two columns of content. In this example, the first column contains a figure with a YouTube video and the second column contains a figure with a custom [React](https://react.dev/) component. By default, they display side by side, but if the screen is narrow enough (for example, on mobile), they're arranged vertically.
-
 <TwoColumns>
-  <Figure slot="left" caption="Take a look at this YouTube video.">
-    <YouTubeVideo videoId="wjZofJX0v4M" />
+  <Figure slot="left">
+    <Image source={annotated_spectra} altText="The amount of unlabelled MS/MS data has grown significantly" />
   </Figure>
-  <Figure slot="right" caption="Now look at this Gaussian Splat, rendered with a React component.">
-    <Splat client:idle />
+  <Figure slot="right">
+    <Image source={massive_unlabelled} altText="The amount of unlabelled MS/MS data has grown significantly" />
   </Figure>
 </TwoColumns>
+
+## Watch the Demo
+<Figure>
+    <YouTubeVideo videoId="X6AlzlAQ18E" />
+</Figure>
 
 ## Heading levels
 
