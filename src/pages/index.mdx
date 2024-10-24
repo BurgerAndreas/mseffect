@@ -1,7 +1,8 @@
 ---
 layout: ../layouts/Layout.astro
-title: "MSEffect: High-resolution, interpretable MS/MS spectrum prediction"
-description: Simple project page template for your research paper, built with Astro and Tailwind CSS
+title: "MSEffect:
+ High-resolution, interpretable MS/MS spectrum prediction with large-scale spectra data"
+description: Accelerating discovery with high-resolution, interpretable MS/MS spectrum prediction
 favicon: favicon.svg
 thumbnail: screenshot.png
 ---
@@ -36,46 +37,39 @@ export const components = {pre: CodeBlock}
       name: "Andreas Burger",
       url: "https://www.andreas-burger.com/",
       institution: "University of Toronto",
-      notes: ["*", "†"],
     },
     {
       name: "Adamo Young",
+      url: "https://adamoyoung.github.io/",
       institution: "University of Toronto",
-      notes: ["*", "†"],
     },
     {
       name: "Fei Wang",
+      url: "https://www.linkedin.com/in/fei-wang-584a3743/",
       institution: "University of Alberta",
-      notes: ["†"],
     },
     {
       name: "Luke Zhang",
+      url: "https://www.linkedin.com/in/luke-zhang-8022b712b/",
       institution: "University of Toronto",
     },
     {
       name: "Rory Gao",
+      url: "https://www.linkedin.com/in/rorygao/",
       institution: "University of Toronto",
     },
     {
       name: "Filip Jozefov",
+      url: " https://www.linkedin.com/in/filip-jozefov-55b9a61a0/",
       institution: "IOCB Prague",
     },
     {
       name: "Roman Bushuiev",
+      url: "https://www.linkedin.com/in/roman-bushuiev/",
       institution: "IOCB Prague",
     },
   ]}
-  conference="Evolved Bio x ML Hackathon 2024"
-  notes={[
-    {
-      symbol: "*",
-      text: "author note one",
-    },
-    {
-      symbol: "†",
-      text: "author note two",
-    },
-  ]}
+  conference="🌟 Enveda Seedling Prize Winner and 2nd place overall at the Evolved Bio x ML Hackathon 2024 🌟"
   />
 
 <Figure>
@@ -86,68 +80,41 @@ export const components = {pre: CodeBlock}
 
 ## Abstract
 
-To accelerate scientific discovery, we need to identify a large number of compounds with high precision. MS/MS could do that. 
+To accelerate scientific discovery, we need to identify a large number of compounds with high precision. 
+MS/MS can do that. Going from spectrum to molecule is hard, 90% of the molecule spectra are unknown.
 
-<div style="text-align: center; font-weight: bold;">
-  But here's the catch: Going from spectrum to molecule is hard, and training data is sparse! We don't know 90% of the molecule spectra.
-</div>
+Our method builds on three pillars: high-resolution prediction, interpretability, and incorporating large-scale unlabelled spectra data.
+We achieve that by combining two state of the art architectures, [FraGNNet](https://arxiv.org/abs/2404.02360) and [DreaMS](https://chemrxiv.org/engage/chemrxiv/article-details/6626775021291e5d1d61967f).
 
 </HighlightedSection>
 
-## Our Solution
-
-Use the figure component to display images, videos, equations, or any other element, with an optional caption.
-
-<TwoColumns>
-  <Figure slot="left">
-    <Image source={annotated_spectra} altText="The amount of unlabelled MS/MS data has grown significantly" />
-  </Figure>
-  <Figure slot="right">
-    <Image source={massive_unlabelled} altText="The amount of unlabelled MS/MS data has grown significantly" />
-  </Figure>
-</TwoColumns>
-
-## Watch the Demo
 <Figure>
     <YouTubeVideo videoId="X6AlzlAQ18E" />
 </Figure>
 
-## Heading levels
+## More details soon!
+We will publish the demo together with FraGNNet once it is published. 
+In the meantime we are fleshing out MSEffect into a paper. Stay tuned!
 
-Use headings to divide your content into sections.
 
-### Heading 3
-
-Go down a level to heading 3...
-
-#### Heading 4
-
-...and down again to heading 4.
-
-## LaTeX
-
-You can also add LaTeX formulas, rendered during the build process using [KaTeX](https://katex.org/) so they're quick to load for visitors of your project page. You can write them inline, like this: <LaTeX inline formula="a^2 + b^2 = c^2" />. Or, you can write them as a block:
-
-<LaTeX formula="\int_a^b f(x) dx" />
-
-## Tables
-
-You can add simple tables using [GitHub Flavored Markdown syntax](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables):
-
-| Model | Accuracy | F1 score | Training time (hours) |
-| :--- | :---: | :---: | :---: |
-| BERT-base | 0.89 | 0.87 | 4.5 |
-| RoBERTa-large | 0.92 | 0.91 | 7.2 |
-| DistilBERT | 0.86 | 0.84 | 2.1 |
-| XLNet | 0.90 | 0.89 | 6.8 |
-
-## BibTeX citation
+## Citation
 
 ```bibtex
-@misc{roman2024academic,
-  author = "{Roman Hauksson}",
-  title = "Academic Project Page Template",
-  year = "2024",
-  howpublished = "\url{https://research-template.roman.technology}",
+@misc{young2024fragnnetdeepprobabilisticmodel,
+      title={FraGNNet: A Deep Probabilistic Model for Mass Spectrum Prediction}, 
+      author={Adamo Young and Fei Wang and David Wishart and Bo Wang and Hannes Röst and Russ Greiner},
+      year={2024},
+      eprint={2404.02360},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2404.02360}, 
+}
+
+@article{bushuiev2024emergence,
+    author = {Bushuiev, Roman and Bushuiev, Anton and Samusevich, Raman and Brungs, Corinna and Sivic, Josef and Pluskal, Tomáš},
+    title = {Emergence of molecular structures from repository-scale self-supervised learning on tandem mass spectra},
+    journal = {ChemRxiv},
+    doi = {doi:10.26434/chemrxiv-2023-kss3r-v2},
+    year = {2024}
 }
 ```

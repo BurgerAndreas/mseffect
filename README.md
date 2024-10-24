@@ -16,6 +16,15 @@ This is a template you can use to create a simple project page for your research
 
 ## Usage
 
+0. Install Node.js
+```bash
+sudo apt install npm 
+sudo npm install -g n
+sudo n lts
+hash -r
+node --version
+```
+
 1. Click "Use this template" to make a copy of this repository and then clone it, or just clone it directly.
 2. Run `npm install` from the root of the project to install dependencies.
 3. Edit the content in `/src/pages/index.mdx`, and remember to update the favicon at `/public/favicon.svg` and the social link thumbnail at `/public/thumbnail.png`.
