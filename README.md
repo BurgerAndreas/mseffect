@@ -15,7 +15,7 @@ sudo n lts
 hash -r
 node --version
 ```
-1. Edit the content in `/src/pages/index.mdx`, and remember to update the favicon at `/public/favicon.svg` and the social link thumbnail at `/public/thumbnail.png`.
+1. Edit the content in `/src/pages/index.mdx`, the favicon at `/public/favicon.svg` and the social link thumbnail at `/public/thumbnail.png`.
 2. Run `npm install` from the root of the project to install dependencies.
 3. Run `npm run dev` to see a live preview of your page while you edit it.
 
